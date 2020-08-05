@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  gitlab-runner1:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    restart: always
+    volumes:
+     - "gitlab-runner1-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+  gitlab-runner2:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    restart: always
+    volumes:
+     - "gitlab-runner2-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+  gitlab-runner3:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    restart: always
+    volumes:
+     - "gitlab-runner3-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+  gitlab-runner4:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    restart: always
+    volumes:
+     - "gitlab-runner4-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+
+volumes:
+  gitlab-runner1-config:
+  gitlab-runner2-config:
+  gitlab-runner3-config:
+  gitlab-runner4-config:
