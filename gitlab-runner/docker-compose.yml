@@ -1,0 +1,47 @@
+version: '3.7'
+
+networks:
+  gitlab-runner-trenchboot:
+
+services:
+  gitlab-runner1-trenchboot:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    networks:
+      - gitlab-runner-trenchboot
+    restart: always
+    volumes:
+     - "gitlab-runner1-trenchboot-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+
+  gitlab-runner2-trenchboot:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    networks:
+      - gitlab-runner-trenchboot
+    restart: always
+    volumes:
+     - "gitlab-runner2-trenchboot-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+
+  gitlab-runner3-trenchboot:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    networks:
+      - gitlab-runner-trenchboot
+    restart: always
+    volumes:
+     - "gitlab-runner3-trenchboot-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+
+  gitlab-runner4-trenchboot:
+    image: gitlab/gitlab-runner:alpine-v${VERSION}
+    networks:
+      - gitlab-runner-trenchboot
+    restart: always
+    volumes:
+     - "gitlab-runner4-trenchboot-config:/etc/gitlab-runner"
+     - "/var/run/docker.sock:/var/run/docker.sock"
+
+volumes:
+  gitlab-runner1-trenchboot-config:
+  gitlab-runner2-trenchboot-config:
+  gitlab-runner3-trenchboot-config:
+  gitlab-runner4-trenchboot-config:
